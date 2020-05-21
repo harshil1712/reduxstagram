@@ -29,10 +29,12 @@ jobs:
     # Runs a single command using the runners shell
     - name: install dependencies
       run: npm install
+      
+    - name: build
+      run: npm build
 
     # Runs a set of commands using the runners shell
     - name: GitHub Pages Custom Deploy
-      uses: sterlinwes/gh-pages-deploy-action@v1.1
+      uses: crazy-max/ghaction-github-pages@v2.0.0
       with:
-        build-command: npm build
-        source-directory: dist
+        build-dir: dist
